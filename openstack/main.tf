@@ -39,11 +39,16 @@ resource "openstack_compute_instance_v2" "dbserver_node" {
             "echo ${openstack_compute_instance_v2.dbserver_node.0.network.0.fixed_ip_v4} > /tmp/db-server-addr",
         ]
     }
-    /*
+    
+    provisioner "file" {
+        source = "${path.module}/scripts/provision"
+        destination = "/tmp/provision"
+    }
+    
     provisioner "remote-exec" {
         scripts = [
-            "${path.module}/scripts/provision.sh",
+            "${path.module}/scripts/provision-centos.sh",
         ]
     }
-    */
+    
 }
