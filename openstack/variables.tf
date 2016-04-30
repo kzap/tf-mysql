@@ -8,6 +8,10 @@ variable "user_login" {
 }
 variable "key_file_path" {}
 
+variable "prefix" {
+    default = "mysql"
+}
+
 variable "nb_of_nodes" {
     default = "4"
 }
