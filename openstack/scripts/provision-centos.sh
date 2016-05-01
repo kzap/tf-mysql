@@ -539,7 +539,7 @@ java_setup() {
   fi
 }
 
-solr() {
+solr_setup() {
   # Download and extract solr 4.8.0
   if [[ ! -d "/opt/solr" ]]; then
     echo -e "\nDownloading Apache Solr, see http://lucene.apache.org/solr/"
@@ -582,6 +582,8 @@ phpmod_setup
 services_restart
 mysql_setup
 #mongo_setup
+java_setup
+solr_setup
 
 network_check
 # Debugging tools
@@ -589,10 +591,6 @@ echo " "
 echo "Installing/updating debugging tools"
 opcached_status
 phpmyadmin_setup
-
-#Solr
-java_setup
-solr
 
 #set +xv
 # And it's done
