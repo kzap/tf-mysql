@@ -13,7 +13,7 @@ resource "openstack_compute_keypair_v2" "dbserver_keypair" {
 /*
 resource "openstack_compute_floatingip_v2" "dbserver_ip" {
   region = "${var.region}"
-  pool = "${lookup(var.pub_net_id, var.region)}"
+  pool = "${var.pub_net_id}"
   count = "${var.servers}"
 }
 */
