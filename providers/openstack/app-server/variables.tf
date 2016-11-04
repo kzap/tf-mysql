@@ -9,11 +9,7 @@ variable "user_login" {
 variable "key_file_path" {}
 
 variable "prefix" {
-    default = "mysql"
-}
-
-variable "nb_of_nodes" {
-    default = "4"
+    default = "apache"
 }
 
 variable "pub_net_id" {
@@ -42,6 +38,6 @@ variable "flavor_name" {
 }
 
 variable "servers" {
-    default = "1"
-    description = "The number of DB servers to launch."
+    default = "2"
+    description = "The number of App servers to launch."
 }
